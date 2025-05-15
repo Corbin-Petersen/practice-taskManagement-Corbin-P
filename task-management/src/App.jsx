@@ -1,13 +1,18 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useState } from 'react'
 import './App.css'
+import TaskList from "./components/TaskList";
+import TaskDetail from "./components/TaskDetail";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      
+      <Router>
+        <Routes>
+            <Route path="/" element={<TaskList />} />
+            <Route path="/:id" element={<TaskDetail />} />
+        </Routes>
+      </Router>
     </>
   )
 }
